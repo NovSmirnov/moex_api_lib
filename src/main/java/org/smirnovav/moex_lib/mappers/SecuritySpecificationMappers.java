@@ -133,28 +133,42 @@ public class SecuritySpecificationMappers {
     public static FuturesBoardSpecification securitiesRawToFuturesBoardSpec(SecuritiesRaw securitiesRaw) {
         List<String> data = securitiesRaw.getData().get(0);
         return new FuturesBoardSpecification(
-                data.get(0), data.get(1), data.get(2), data.get(3), Integer.parseInt(data.get(5)),
-                Double.parseDouble(data.get(6)), data.get(10), data.get(9), Double.parseDouble(data.get(19)),
-                Double.parseDouble(data.get(4)), DateTimeUtils.dateWithDashToCalendar(data.get(7)),
-                DateTimeUtils.dateWithDashToCalendar(data.get(8)), data.get(11), Integer.parseInt(data.get(12)),
-                Integer.parseInt(data.get(13)), Double.parseDouble(data.get(14)), Double.parseDouble(data.get(15)),
-                Double.parseDouble(data.get(16)), Double.parseDouble(data.get(17)), Double.parseDouble(data.get(18)),
-                DateTimeUtils.stringDateTimeWithDashesToCalendar(data.get(20)), Double.parseDouble(data.get(21)), Double.parseDouble(data.get(22)),
-                Double.parseDouble(data.get(23)), Double.parseDouble(data.get(24))
+                data.get(0), data.get(1), data.get(2), data.get(3),
+                data.get(5) == null ? 0 : Integer.parseInt(data.get(5)),
+                data.get(6) == null ? 0 : Double.parseDouble(data.get(6)), data.get(10), data.get(9),
+                data.get(19) == null ? 0 : Double.parseDouble(data.get(19)),
+                data.get(4) == null ? 0 : Double.parseDouble(data.get(4)),
+                DateTimeUtils.dateWithDashToCalendar(data.get(7)),
+                DateTimeUtils.dateWithDashToCalendar(data.get(8)), data.get(11),
+                data.get(12) == null ? 0 : Integer.parseInt(data.get(12)),
+                data.get(13) == null ? 0 : Integer.parseInt(data.get(13)),
+                data.get(14) == null ? 0 : Double.parseDouble(data.get(14)),
+                data.get(15) == null ? 0 : Double.parseDouble(data.get(15)),
+                data.get(16) == null ? 0 : Double.parseDouble(data.get(16)),
+                data.get(17) == null ? 0 : Double.parseDouble(data.get(17)),
+                data.get(18) == null ? 0 : Double.parseDouble(data.get(18)),
+                DateTimeUtils.stringDateTimeWithDashesToCalendar(data.get(20)),
+                data.get(21) == null ? 0 : Double.parseDouble(data.get(21)),
+                data.get(22) == null ? 0 : Double.parseDouble(data.get(22)),
+                data.get(23) == null ? 0 : Double.parseDouble(data.get(23)),
+                data.get(24) == null ? 0 : Double.parseDouble(data.get(24))
                 );
 
     }
     public static StockBoardSpecification securitiesRawToStockBoardSpec(SecuritiesRaw securitiesRaw) {
         List<String> data = securitiesRaw.getData().get(0);
         return new StockBoardSpecification(
-                data.get(0), data.get(1), data.get(2), data.get(9), Integer.parseInt(data.get(8)),
-                Double.parseDouble(data.get(14)), data.get(20), data.get(24), Double.parseDouble(data.get(3)),
-                Integer.parseInt(data.get(4)), Integer.parseInt(data.get(5)),
-                data.get(6), data.get(7), data.get(10),
-                data.get(11), data.get(12), data.get(13),
-                Double.parseDouble(data.get(15)), data.get(16), DateTimeUtils.dateWithDashToCalendar(data.get(17)),
-                Long.parseLong(data.get(18)), data.get(19), data.get(21),
-                Double.parseDouble(data.get(22)), data.get(23), Integer.parseInt(data.get(25)), DateTimeUtils.dateWithDashToCalendar(data.get(26))
+                data.get(0), data.get(1), data.get(2), data.get(9), data.get(8) == null ? 0 : Integer.parseInt(data.get(8)),
+                data.get(14) == null ? 0 : Double.parseDouble(data.get(14)), data.get(20), data.get(24),
+                data.get(3) == null ? 0 : Double.parseDouble(data.get(3)),
+                data.get(4) == null ? 0 : Integer.parseInt(data.get(4)),
+                data.get(5) == null ? 0 : Integer.parseInt(data.get(5)),
+                data.get(6), data.get(7), data.get(10), data.get(11), data.get(12), data.get(13),
+                data.get(15) == null ? 0 : Double.parseDouble(data.get(15)), data.get(16),
+                DateTimeUtils.dateWithDashToCalendar(data.get(17)),
+                data.get(18) == null ? 0 : Long.parseLong(data.get(18)), data.get(19), data.get(21),
+                data.get(22) == null ? 0 : Double.parseDouble(data.get(22)), data.get(23),
+                data.get(25) == null ? 0 : Integer.parseInt(data.get(25)), DateTimeUtils.dateWithDashToCalendar(data.get(26))
                 );
     }
 
